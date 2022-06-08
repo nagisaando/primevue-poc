@@ -1,16 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <InputText type="text" :modelValue="value1" @blur="sayHi" />
+  <span :style="{marginLeft: '.5em'}">{{ value1 }}</span>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import InputText from 'primevue/inputtext'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    InputText,
+  },
+  data() {
+    return {
+      value1: '',
+    }
+  },
+  methods: {
+    sayHi(e) {
+      console.log(e)
+    },
+  },
 }
 </script>
 
